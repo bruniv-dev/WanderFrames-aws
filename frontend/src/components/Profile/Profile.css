@@ -1,0 +1,311 @@
+.profile-header {
+  background-color: white;
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+
+.profile-logo {
+  color: black;
+}
+
+.profile-nav a {
+  color: black;
+}
+
+.profile-signin {
+  color: #fff;
+}
+
+.profile-container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.profile-container .card-container .description {
+  color: #555;
+}
+
+.profile-container .profile-details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.profile-container .profile-image img {
+  width: 11.25rem;
+  height: 11.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.profile-container .profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  gap: 0.05rem;
+}
+
+.profile-container .profile-info .username {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.profile-container .profile-info .name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.profile-container .profile-info .email {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.profile-container .profile-info .bio {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.profile-container .profile-info .role {
+  color: #777;
+  font-size: 0.75rem;
+}
+
+.profile-container .profile-info .joined {
+  color: #999;
+  font-size: 0.75rem;
+}
+
+.profile-container .posts-section {
+  height: 100vh;
+}
+
+.profile-header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+  gap: 0.75rem;
+  margin: 1rem auto 2rem;
+  flex-wrap: wrap;
+  height: 2rem;
+  max-width: 500px;
+}
+
+.profile-header-buttons button {
+  height: 2rem;
+  display: flex;
+  gap: 0.2rem;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.75rem;
+  min-width: 135px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-header-buttons .profile-edit-button {
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.mdedit {
+  fill: var(--primary-color);
+}
+
+.mdedit:hover {
+  fill: var(--primary-hover);
+  transform: scale(1.02);
+}
+
+.profile-edit-button:hover {
+  color: var(--primary-hover);
+  border: 1px solid var(--primary-hover);
+  transform: scale(1.02);
+}
+
+.profile-header-buttons .reset-password-button {
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.resetpasswordicon {
+  fill: var(--primary-color);
+  transform: scale(1.02);
+}
+
+.resetpasswordicon:hover {
+  fill: var(--primary-hover);
+  transform: scale(1.02);
+}
+
+.profile-header-buttons .profile-delete-button {
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--red-color);
+  border-radius: 4px;
+  height: 100%;
+  box-sizing: border-box;
+  color: var(--red-color);
+}
+
+.mddelete {
+  fill: var(--red-color);
+}
+
+.profile-header-buttons .reset-password-button:hover {
+  border: 1px solid var(--primary-hover);
+  color: var(--primary-hover);
+  transform: scale(1.02);
+}
+
+.profile-delete-button:hover {
+  fill: var(--red-hover);
+  border: 1px solid var(--red-hover);
+  transform: scale(1.02);
+}
+
+.profile-container .card-add-to-favorites {
+  display: none;
+}
+
+.profile-container .card-location-button {
+  right: 75px;
+}
+
+.profile-container .no-posts-message {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #aaa;
+  margin: 3rem;
+}
+
+.profile-container .posts-section {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-container .card-layout {
+  margin: 1rem 0;
+  gap: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.profile-container .notif {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #000;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  z-index: 2;
+  text-align: center;
+  max-width: 15rem;
+}
+
+.profile-container .notif.error-message {
+  background-color: var(--light-pink);
+}
+
+.profile-container .notif.success-message {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+  .profile-container .profile-details {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    padding: 0.5rem;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .profile-container .profile-image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .profile-container .profile-info {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .profile-container .profile-info .username {
+    font-size: 0.75rem;
+  }
+
+  .profile-container .profile-info .name {
+    font-size: 0.75rem;
+  }
+
+  .profile-container .profile-info .email,
+  .profile-container .profile-info .role,
+  .profile-container .profile-info .joined {
+    font-size: 0.625rem;
+  }
+
+  .profile-container .profile-info .bio {
+    font-size: 0.675rem;
+    margin: 0.25rem 0;
+  }
+
+  .profile-container .profile-image img {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .profile-header-buttons {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
+  }
+
+  .profile-header-buttons button {
+    font-size: 0.5rem;
+    padding: 0.4rem 0.5rem;
+    min-width: 92px;
+    font-weight: 500;
+  }
+}

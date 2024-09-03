@@ -1,0 +1,31 @@
+{
+  "name": "wanderframes",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A website that suggests places to visit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development nodemon app.js",
+    "start": "node app.js",
+    "prod": "NODE_ENV=production node app.js"
+  },
+  "keywords": [
+    "Travel",
+    "Website"
+  ],
+  "author": "Nivedha R",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/s3-request-presigner": "^3.637.0",
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4"
+  }
+}

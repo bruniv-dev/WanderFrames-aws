@@ -1,0 +1,196 @@
+/* CSS for CardLayout Component */
+
+/* Grid layout for cards */
+.card-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  gap: 2rem;
+  grid-row-gap: 2rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.card-layout > * {
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+  bottom: 5px;
+}
+
+.page-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: white;
+  border: 0.5px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.page-button.active {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.page-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-hover);
+}
+
+.arrow-button {
+  font-size: 14px;
+  font-weight: medium;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* .modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 900px;
+  overflow-y: auto;
+  position: relative;
+  overflow-x: hidden;
+  max-height: 80vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-slider {
+  margin-bottom: 20px;
+  max-height: 700px;
+  border-radius: 10px;
+}
+.modal-slider-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.custom-prev-arrow,
+.custom-next-arrow {
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: black;
+}
+
+.custom-prev-arrow:hover,
+.custom-next-arrow:hover {
+  color: var(--primary-color);
+}
+
+.custom-prev-arrow:before,
+.custom-next-arrow:before {
+  font-size: 20px;
+  color: #fff;
+}
+
+.custom-prev-arrow {
+  left: 1rem;
+}
+
+.custom-next-arrow {
+  right: 0;
+}
+
+.card-custom-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.card-custom-dots .slick-active .card-custom-dot {
+  background-color: var(--primary-color);
+}
+
+.selected-card-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.selected-card-profile-image-card {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.selected-card-username {
+  font-size: 1.25rem;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.selected-card-username:hover {
+  color: var(--primary-color);
+}
+
+.selected-card-role,
+.selected-card-date {
+  color: #555;
+  font-size: 0.75rem;
+} */
+
+/* .modal-content {
+  position: relative;
+} */
+
+.close-button {
+  position: absolute;
+  top: -5px;
+  right: 8px;
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  color: var(--primary-color);
+}

@@ -1,0 +1,51 @@
+.search-container {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.search-container input {
+  width: 90%;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 0.75rem;
+  border: none;
+  outline: none;
+}
+
+.search-icon {
+  fill: var(--primary-color);
+  margin: 0 1rem;
+}
+
+.role-select {
+  width: 4rem;
+  height: 1.25rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  border: 0.5px solid #ccc;
+  color: #777;
+  outline: none;
+}
+
+.role-select option {
+  width: 100%;
+  font-size: 0.75rem;
+  color: #000;
+  margin: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: 80%;
+  }
+
+  .search-container input {
+    font-size: 0.5rem;
+  }
+}

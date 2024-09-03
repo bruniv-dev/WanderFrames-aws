@@ -1,0 +1,194 @@
+/* UserProfile.css */
+
+.user-profile-header {
+  background-color: white;
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+
+.user-profile-logo {
+  color: black;
+}
+
+.user-profile-nav a {
+  color: black;
+}
+
+.user-profile-signin {
+  color: #fff;
+}
+
+/* .user-profile-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-profile-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.user-profile-image {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.user-profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-profile-info {
+  flex: 1;
+}
+
+.user-profile-info h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-profile-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.user-posts-section {
+  margin-top: 20px;
+}
+
+.user-posts-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.user-profile-header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.user-profile-container .card-kebab-menu-container {
+  display: none;
+} */
+
+/* Container styles */
+.user-profile-container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* User profile details */
+.user-profile-details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #00000013;
+  padding: 1rem 2rem;
+}
+
+.user-profile-image img {
+  width: 11.25rem;
+  height: 11.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* User info section */
+.user-profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  gap: 0.05rem;
+}
+
+.user-profile-info h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.user-profile-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.user-profile-info p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.user-profile-info .user-profile-email {
+  font-size: 0.75rem;
+  color: #777;
+  display: none;
+}
+
+.user-profile-info .user-profile-bio {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.user-profile-info .user-profile-joined {
+  color: #999;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.user-profile-info .user-profile-role {
+  color: #999;
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-top: 0.75rem;
+}
+
+/* Posts section */
+.user-posts-section {
+  margin: 1rem 0;
+  gap: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* No posts message */
+.user-profile-container .no-posts-message {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #aaa;
+  margin: 3rem;
+}
+
+/* Card layout specific styles */
+/* .card-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  justify-content: start;
+  align-items: start;
+  box-sizing: border-box;
+} */
+
+.user-profile-container .card-kebab-menu-container {
+  display: none;
+}

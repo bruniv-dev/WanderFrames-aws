@@ -1,0 +1,51 @@
+.postActions-header {
+  background-color: white;
+  border-bottom: 1px solid rgb(226, 223, 223);
+}
+
+.postActions-logo {
+  color: black;
+}
+
+.postActions-nav a {
+  color: black;
+}
+
+.postActions-signin {
+  color: #fff;
+}
+
+.postActions-container .card-kebab-menu-container {
+  display: none;
+}
+
+.postActions-container .no-posts-message {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #777;
+  margin-top: 10rem;
+}
+
+.postActions-container .notif {
+  position: sticky;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #000;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  z-index: 2;
+  text-align: center;
+  max-width: 20rem;
+}
+
+.postActions-container .notif.error-message {
+  background-color: var(--light-pink);
+}
+
+.postActions-container .notif.success-message {
+  background-color: var(--secondary-color);
+}

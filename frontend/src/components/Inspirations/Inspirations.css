@@ -1,0 +1,43 @@
+.inspirations-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.inspirations-header {
+  background-color: white;
+}
+
+.inspirations-logo {
+  color: black;
+}
+
+.inspirations-nav a {
+  color: black;
+}
+
+.inspirations-signin {
+  color: #fff;
+}
+
+.inspirations-container .role {
+  display: none;
+}
+
+.inspirations-container .card-kebab-menu-container {
+  display: none;
+}
+
+.inspirations-container .no-cards-message {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #777;
+  margin-top: 5rem;
+}
+
+.inspirations-container .card-layout .card-admin-delete-button {
+  display: none;
+}

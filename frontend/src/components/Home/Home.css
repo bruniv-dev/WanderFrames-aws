@@ -1,0 +1,185 @@
+/* 0.8, 1.6, 2.4 ,3.2 ,4 ,4.8 ,5.6, 6.4, 7.2, 8*/
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(40%);
+}
+
+.header.home-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 2;
+  /* background-color: rgb(255, 255, 255, 0.05); */
+}
+
+.hamburger.home-ham {
+  color: #fff;
+}
+
+.hamburger.home-ham:hover {
+  color: var(--primary-color);
+}
+
+.header .home-logo {
+  width: 10rem;
+}
+
+.nav.home-nav a {
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav.home-nav a:hover {
+  color: var(--primary-hover);
+  transform: scale(1.02);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.home-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* flex-wrap: wrap; */
+  padding: 1rem;
+}
+
+.heading {
+  font-size: 3rem;
+  color: white;
+  letter-spacing: 0.5px;
+  z-index: 1;
+  line-height: 1;
+  text-align: center;
+}
+
+.sub-heading {
+  font-family: "Dancing Script", cursive;
+  font-weight: 300;
+  font-size: 1.675rem;
+  color: var(--secondary-color);
+  letter-spacing: 1.6px;
+  z-index: 1;
+  text-align: center;
+}
+
+/* .slogan {
+  position: relative;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.8px;
+}
+.slogan span {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 600;
+} */
+
+.slogan {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.8px;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.slogan-dot-1 {
+  /* display: inline-block; */
+  top: -5%;
+  position: absolute;
+  left: 36%;
+}
+
+.slogan-dot-2 {
+  position: absolute;
+  left: 68%;
+  top: -5%;
+}
+
+.dots {
+  line-height: 1;
+  font-size: 1rem;
+  /* margin: 0 5px; */
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+.home-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  z-index: 1;
+  flex-wrap: wrap;
+  font-weight: 500;
+}
+
+.home-hero-btn {
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.home-hero-btn:hover {
+  transform: scale(1.01);
+}
+
+.home-hero-button-1 {
+  background-color: var(--primary-color);
+}
+
+.home-hero-button-1:hover {
+  background-color: var(--primary-hover);
+}
+
+.home-hero-button-2 {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.home-hero-button-2:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.01);
+}
+
+.home-hero-button-2:active,
+.home-hero-button-1:active {
+  transform: scale(0.95);
+}

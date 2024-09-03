@@ -1,0 +1,10 @@
+.user-actions-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, auto));
+  /* gap: 0.5rem; */
+  grid-row-gap: 3rem;
+  grid-column-gap: 0.5rem;
+  /* padding: 1rem; */
+  align-items: center;
+  justify-content: center;
+}

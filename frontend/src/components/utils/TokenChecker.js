@@ -133,19 +133,19 @@ const useTokenChecker = (isLoggedIn, setShowPopup) => {
 
           if (!response.data.isValid) {
             // Token is invalid or expired
-            dispatch(authActions.logout()); // Update Redux store
+
             localStorage.removeItem("token");
             localStorage.removeItem("isLoggedIn");
             localStorage.removeItem("isAdmin");
-
+            dispatch(authActions.logout());
             setShowPopup(true); // Show popup
           }
         } else {
-          dispatch(authActions.logout()); // Update Redux store if no token is found
-          localStorage.removeItem("token");
-          localStorage.removeItem("isLoggedIn");
-          localStorage.removeItem("isAdmin");
-
+          // Update Redux store if no token is found
+          // localStorage.removeItem("token");
+          // localStorage.removeItem("isLoggedIn");
+          // localStorage.removeItem("isAdmin");
+          dispatch(authActions.logout());
           setShowPopup(true); // Show popup
         }
       } catch (err) {
@@ -155,7 +155,6 @@ const useTokenChecker = (isLoggedIn, setShowPopup) => {
           localStorage.removeItem("token");
           localStorage.removeItem("isLoggedIn");
           localStorage.removeItem("isAdmin");
-
           setShowPopup(true); // Show popup
         }
       }

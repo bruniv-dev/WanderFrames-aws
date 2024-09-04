@@ -112,7 +112,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { authActions } from "../../store/authSlice";
 
-const TOKEN_CHECK_INTERVAL = 60000; // Check every minute
+const TOKEN_CHECK_INTERVAL = 3600000;
 
 const useTokenChecker = (isLoggedIn, setShowPopup) => {
   const dispatch = useDispatch();

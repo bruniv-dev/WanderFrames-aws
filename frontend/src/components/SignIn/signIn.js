@@ -216,12 +216,13 @@ const SignInSignUp = () => {
           localStorage.setItem("isAdmin", isAdmin);
           localStorage.setItem("isLoggedIn", "true"); // Since user just signed up, they're logged in.
 
+          console.log(token, isAdmin);
           dispatch(authActions.login({ isAdmin, token }));
           setSuccessFinal("Sign Up Successfull. Logging you in...");
           // Redirect after a short delay to show the success message
           setTimeout(() => {
             navigate("/");
-          }, 2000);
+          }, 1000);
         } else {
           setError("Sign-up was successful, but auto-login failed.");
         }

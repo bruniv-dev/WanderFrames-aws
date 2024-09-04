@@ -172,6 +172,20 @@ export const getAllUsers = async () => {
   }
 };
 
+// export const fetchUserDetailsById = async (userId) => {
+//   try {
+//     // Ensure cookies are sent with the request
+//     const response = await axios.get(`/user/${userId}`, {
+//       withCredentials: true, // This ensures that cookies, including HTTP-only cookies, are sent with the request
+//     });
+
+//     return response.data; // Return the entire user object
+//   } catch (err) {
+//     console.error("Error fetching user details:", err);
+//     throw err;
+//   }
+// };
+
 export const fetchUserDetailsById = async (userId) => {
   try {
     // Ensure cookies are sent with the request
@@ -181,8 +195,23 @@ export const fetchUserDetailsById = async (userId) => {
 
     return response.data; // Return the entire user object
   } catch (err) {
-    console.error("Error fetching user details:", err);
-    throw err;
+    if (err.response) {
+      // Server responded with a status other than 2xx
+      console.error("Error response from server:", {
+        status: err.response.status,
+        data: err.response.data,
+        headers: err.response.headers,
+      });
+    } else if (err.request) {
+      // Request was made but no response received
+      console.error("No response received:", {
+        request: err.request,
+      });
+    } else {
+      // Something else happened in setting up the request
+      console.error("Error setting up request:", err.message);
+    }
+    throw err; // Re-throw the error to be handled by the calling code
   }
 };
 

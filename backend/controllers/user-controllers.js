@@ -128,12 +128,19 @@ export const login = async (req, res) => {
 
     console.log("Generated token:", token);
     // Set token as HTTP-only cookie
+    // res.cookie("token", token, {
+    //   httpOnly: true,
+    //   path: "/",
+    //   sameSite: "None",
+    //   secure: true,
+    //   maxAge: 3600000,
+    // });
     res.cookie("token", token, {
-      httpOnly: true,
-      path: "/",
-      sameSite: "None",
-      secure: true,
-      maxAge: 3600000,
+      httpOnly: true, // Prevents JavaScript access
+      path: "/", // Cookie available across the site
+      sameSite: "Lax", // Allows the cookie in top-level navigations
+      secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
+      maxAge: 3600000, // Cookie expiration time (1 hour)
     });
 
     const env = process.env.NODE_ENV;
@@ -156,10 +163,17 @@ export const login = async (req, res) => {
 
 export const logoutUser = (req, res) => {
   try {
+    // res.clearCookie("token", {
+    //   httpOnly: true,
+    //   sameSite: "None",
+    //   secure: true, // Make sure this matches the setting used when creating the cookie
+    //   path: "/", // Ensure this matches the path used when creating the cookie
+    // });
+
     res.clearCookie("token", {
       httpOnly: true,
       sameSite: "None",
-      secure: true, // Make sure this matches the setting used when creating the cookie
+      secure: process.env.NODE_ENV === "production", // Make sure this matches the setting used when creating the cookie
       path: "/", // Ensure this matches the path used when creating the cookie
     });
 

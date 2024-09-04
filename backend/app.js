@@ -47,6 +47,7 @@ import postRouter from "./routers/post-routes.js"; // http://localhost:3000/post
 const allowedOrigins = [
   "http://localhost:3000", // Development frontend
   "https://wanderframes.onrender.com", // Production frontend
+  "https://wanderframes.netlify.com",
 ];
 
 // Middleware setup

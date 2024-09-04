@@ -45,12 +45,25 @@ import userRouter from "./routers/user-routes.js"; // http://localhost:3000/user
 import postRouter from "./routers/post-routes.js"; // http://localhost:3000/post
 
 const allowedOrigins = [
-  "http://localhost:3000", // Development frontend
-  "https://wanderframes.onrender.com", // Production frontend
+  "http://localhost:3000",
   "https://wanderframes.netlify.app",
+  "https://wanderframes.onrender.com",
 ];
 
 // Middleware setup
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true, // Allow credentials
+//   })
+// );
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -60,7 +73,7 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true, // Allow credentials
+    credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
   })
 );
 

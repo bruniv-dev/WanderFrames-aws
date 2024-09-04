@@ -142,9 +142,9 @@ const useTokenChecker = (isLoggedIn, setShowPopup) => {
           }
         } else {
           // Update Redux store if no token is found
-          // localStorage.removeItem("token");
-          // localStorage.removeItem("isLoggedIn");
-          // localStorage.removeItem("isAdmin");
+          localStorage.removeItem("token");
+          localStorage.removeItem("isLoggedIn");
+          localStorage.removeItem("isAdmin");
           dispatch(authActions.logout());
           setShowPopup(true); // Show popup
         }

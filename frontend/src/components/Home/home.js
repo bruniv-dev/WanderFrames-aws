@@ -4,6 +4,7 @@ import Header from "../Header/header.js";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading.js";
 import Popup from "../ErrorPages/PopupCard.js";
+import Footer from "../footer/footer.js";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -77,6 +78,7 @@ const Home = () => {
             <span className="dots slogan-dot-2">.</span> INSPIRE
           </p>
         </div>
+
         <Popup
           showPopup={showPopup}
           onClose={handleClosePopup}
@@ -88,6 +90,7 @@ const Home = () => {
           }}
         />
       </div>
+      <Footer customClass="home" />
     </>
   );
 };

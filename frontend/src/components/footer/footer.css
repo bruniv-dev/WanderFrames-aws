@@ -82,6 +82,10 @@
   transition: all 0.3s;
 }
 
+.footer.home {
+  margin-top: 0;
+}
+
 .footer__link:hover,
 .footer__link:active {
   color: var(--primary-hover);

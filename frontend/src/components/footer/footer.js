@@ -1,9 +1,9 @@
 import React from "react";
 import "./footer.css"; // Assuming your CSS is named Footer.css
 
-const Footer = () => {
+const Footer = ({ customClass }) => {
   return (
-    <footer className="footer">
+    <footer className={`footer ${customClass}`}>
       <div className="footer__container">
         <div className="footer__logo-col">
           <a href="/" className="footer__logo">

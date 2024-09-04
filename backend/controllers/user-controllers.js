@@ -78,7 +78,7 @@ export const signup = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       path: "/",
-      sameSite: "None",
+      sameSite: "Lax",
       secure: true,
       maxAge: 3600000, // 1 hour
     });
@@ -131,9 +131,9 @@ export const login = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       path: "/",
-      sameSite: "None",
+      sameSite: "Lax",
       secure: true,
-      maxAge: 3600000, // 1 hour
+      maxAge: 3600000,
     });
 
     const env = process.env.NODE_ENV;

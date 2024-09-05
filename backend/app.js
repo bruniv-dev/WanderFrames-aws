@@ -22,15 +22,15 @@ import {
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-// Define __dirname for ES modules
+// // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Create an uploads directory if it doesn't exist
-export const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
+// // Create an uploads directory if it doesn't exist
+// export const uploadDir = path.join(__dirname, "uploads");
+// if (!fs.existsSync(uploadDir)) {
+//   fs.mkdirSync(uploadDir, { recursive: true });
+// }
 
 dotenv.config({
   path: path.resolve(__dirname, "config.env"),
@@ -38,7 +38,8 @@ dotenv.config({
 
 // Serve static files from "uploads" directory
 const app = express();
-app.use("/uploads", express.static(uploadDir));
+// app.use("/uploads", express.static(uploadDir));
+app.use(express.static(path.join(__dirname, "build")));
 
 // Import routes - middleware
 import userRouter from "./routers/user-routes.js"; // http://localhost:3000/user

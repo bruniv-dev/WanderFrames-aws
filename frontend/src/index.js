@@ -78,12 +78,12 @@ import store from "./store/store";
 // axios.defaults.baseURL = "http://localhost:5000";
 
 // Example environment variables
-// const baseUrl =
-//   process.env.NODE_ENV === "production"
-//     ? "https://wanderframes-aws.onrender.com"
-//     : "http://localhost:5000";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://wanderframes-aws.onrender.com"
+    : "http://localhost:5000";
 
-const baseUrl = "https://wanderframes-aws.onrender.com";
+// const baseUrl = "https://wanderframes-aws.onrender.com";
 
 axios.defaults.baseURL = baseUrl;
 

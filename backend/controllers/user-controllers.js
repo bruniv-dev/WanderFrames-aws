@@ -163,6 +163,11 @@ export const logoutUser = (req, res) => {
       path: "/", // Ensure this matches the path used when creating the cookie
     });
 
+    localStorage.removeItem("token");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isAdmin");
+    dispatch(authActions.logout());
+
     res.status(200).json({ message: "Logged out successfully" });
     console.log("Sending logout response: Logged out successfully");
   } catch (error) {

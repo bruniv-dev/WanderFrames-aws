@@ -1,8 +1,6 @@
 import User from "../models/User.js";
 import mongoose from "mongoose";
 import Post from "../models/Post.js";
-import path from "path";
-import crypto from "crypto";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { uploadFile } from "../app.js";
@@ -162,11 +160,6 @@ export const logoutUser = (req, res) => {
       secure: true, // Make sure this matches the setting used when creating the cookie
       path: "/", // Ensure this matches the path used when creating the cookie
     });
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("isAdmin");
-    dispatch(authActions.logout());
 
     res.status(200).json({ message: "Logged out successfully" });
     console.log("Sending logout response: Logged out successfully");

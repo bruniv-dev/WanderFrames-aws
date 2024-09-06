@@ -17,15 +17,15 @@ const authSlice = createSlice({
       state.token = action.payload.token; // Store token
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("isAdmin", action.payload.isAdmin.toString());
-      localStorage.setItem("token", action.payload.token); // Store token in localStorage
+      localStorage.setItem("token", action.payload.token);
     },
     logout(state) {
       state.isLoggedIn = false;
       state.isAdmin = false;
-      state.token = null; // Clear token
+      state.token = null;
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("isAdmin");
-      localStorage.removeItem("token"); // Remove token from localStorage
+      localStorage.removeItem("token");
     },
     initializeAuth(state, action) {
       state.isLoggedIn = action.payload.isLoggedIn ?? state.isLoggedIn;
@@ -44,7 +44,6 @@ export const initializeAuth = () => async (dispatch) => {
     const token = localStorage.getItem("token");
 
     if (isLoggedIn && token) {
-      // Validate token with backend
       const response = await axios.post(
         "/user/validate-token",
         { token },
@@ -60,7 +59,6 @@ export const initializeAuth = () => async (dispatch) => {
           })
         );
       } else {
-        // Token is invalid or expired
         dispatch(authActions.logout());
         localStorage.removeItem("token");
         localStorage.removeItem("isLoggedIn");
@@ -88,13 +86,13 @@ export const initializeAuth = () => async (dispatch) => {
 };
 
 // Thunk action to handle logout
-export const logoutUser = () => async (dispatch) => {
-  try {
-    await axios.post("/user/logout", {}, { withCredentials: true });
-    dispatch(authActions.logout());
-  } catch (error) {
-    console.error("Logout failed:", error);
-  }
-};
+// export const logoutUser = () => async (dispatch) => {
+//   try {
+//     await axios.post("/user/logout", {}, { withCredentials: true });
+//     dispatch(authActions.logout());
+//   } catch (error) {
+//     console.error("Logout failed:", error);
+//   }
+// };
 
 export default authSlice.reducer;

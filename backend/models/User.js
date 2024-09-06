@@ -51,7 +51,7 @@ const userSchema = new Schema({
   ],
   isAdmin: {
     type: Boolean,
-    default: false, // Default to non-admin
+    default: false,
   },
   securityQuestion: {
     type: String,
@@ -73,8 +73,6 @@ const userSchema = new Schema({
     type: String,
     default: "User",
   },
-  // resetToken: String,
-  // resetTokenExpiration: Date,
 });
 
 export default model("User", userSchema);

@@ -4,7 +4,6 @@ import User from "../models/User.js";
 import path from "path";
 import { uploadFile } from "../app.js";
 
-//get all posts
 export const getAllPosts = async (req, res, next) => {
   let posts;
   try {
@@ -20,7 +19,6 @@ export const getAllPosts = async (req, res, next) => {
   return res.status(200).json({ posts });
 };
 
-//get post by id
 export const getPostById = async (req, res) => {
   const id = req.params.id;
 
@@ -54,54 +52,6 @@ export const deletePost = async (req, res) => {
   }
 };
 
-// // Define the base URL
-// // const baseUrl = "https://wanderframes.onrender.com";
-// const baseUrl =
-//   process.env.NODE_ENV === "production"
-//     ? "https://wanderframes.onrender.com"
-//     : "http://localhost:5000";
-
-// // Your addPost controller function
-// export const addPost = async (req, res) => {
-//   const { subLocation, description, location, date, locationUrl, postedAt } =
-//     req.body;
-//   const user = req.user.userId;
-//   console.log(user);
-//   const imageFiles = req.files;
-
-//   // Generate image URLs
-//   const imageUrls = imageFiles.map(
-//     (file) => `${baseUrl}/uploads/${path.basename(file.path)}`
-//   );
-
-//   try {
-//     const post = new Post({
-//       subLocation,
-//       description,
-//       location,
-//       date: new Date(date),
-//       user,
-//       images: imageUrls.map((url) => ({ url })),
-//       locationUrl,
-//       postedAt,
-//     });
-
-//     const session = await mongoose.startSession();
-//     session.startTransaction();
-//     const existingUser = await User.findById(user);
-//     existingUser.posts.push(post);
-//     await existingUser.save({ session });
-//     await post.save({ session });
-//     await session.commitTransaction();
-//     session.endSession();
-
-//     return res.status(201).json({ post });
-//   } catch (err) {
-//     console.error("Error adding post:", err);
-//     res.status(500).json({ message: "Unexpected Error Occurred" });
-//   }
-// };
-
 export const addPost = async (req, res) => {
   try {
     const { subLocation, description, location, date, locationUrl, postedAt } =
@@ -116,9 +66,8 @@ export const addPost = async (req, res) => {
       return res.status(400).json({ message: "No images provided" });
     }
 
-    // Upload files to S3 with proper filenames
+    // Upload files to S3 aws
     const imageUploadPromises = imageFiles.map((file) => {
-      // Use original name if available, otherwise default to a generated name
       const originalName = file.originalname || "unnamed-file";
       const uniqueFileName = `${Date.now()}-${originalName}`;
       return uploadFile(file.buffer, uniqueFileName, file.mimetype);

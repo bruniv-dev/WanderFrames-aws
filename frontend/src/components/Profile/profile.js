@@ -991,20 +991,17 @@ const Profile = () => {
 
   const fetchUserDetails = async () => {
     try {
-      // Fetch user details using the token
       const tokenData = await fetchUserDetailsByToken();
       console.log("Token Data:", JSON.stringify(tokenData, null, 2));
-      const userId = tokenData.userId; // Adjust according to actual response structure
+      const userId = tokenData.userId;
 
       if (!userId) {
         throw new Error("User ID is not available from the token.");
       }
 
-      // Fetch user details by user ID
       const userData = await fetchUserDetailsById(userId);
       setUser(userData);
 
-      // Fetch user posts
       const userPosts = await fetchUserPosts(userId);
       setPosts(userPosts);
     } catch (err) {
@@ -1055,23 +1052,6 @@ const Profile = () => {
     }
   };
 
-  // const handleResetPassword = async (oldPassword, newPassword) => {
-  //   try {
-  //     if (!user || !user._id) {
-  //       throw new Error("User ID is not available.");
-  //     }
-  //     await resetPassword(user._id, oldPassword, newPassword);
-  //     return true;
-  //   } catch (err) {
-  //     console.error("Error resetting password:", err);
-  //     setError(
-  //       err.response?.data?.message ||
-  //         "Failed to reset password. Please try again."
-  //     );
-  //     return false;
-  //   }
-  // };
-
   const handleResetPassword = async (oldPassword, newPassword) => {
     try {
       if (!user || !user._id) {
@@ -1092,12 +1072,12 @@ const Profile = () => {
 
   const formatDate = (dateString) => {
     if (!dateString) {
-      return "Date not available"; // Fallback if the date is invalid or undefined
+      return "Date not available";
     }
 
     const date = new Date(dateString);
     if (isNaN(date.getTime())) {
-      return "Invalid date"; // Handle cases where dateString cannot be converted to a valid date
+      return "Invalid date";
     }
 
     const options = { day: "2-digit", month: "long", year: "numeric" };

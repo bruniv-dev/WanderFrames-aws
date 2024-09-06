@@ -10,9 +10,8 @@ import {
 import { authenticateToken } from "../middleware/jwt.js";
 import { checkPostOwnershipAndAdminPrivileges } from "../middleware/jwt.js";
 
-// Multer setup for handling file buffers
-const storage = multer.memoryStorage(); // Store files in memory as Buffer
-const uploadMultiple = multer({ storage }).array("images", 3); // Limit to 3 files
+const storage = multer.memoryStorage();
+const uploadMultiple = multer({ storage }).array("images", 3);
 
 const postRouter = Router();
 

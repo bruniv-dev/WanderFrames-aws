@@ -98,13 +98,10 @@ const SignInSignUp = () => {
       }
     };
 
-    // Clear any existing timeout before setting a new one
     clearTimeout(debounceTimeout.current);
 
-    // Set a new timeout to delay the API call
     debounceTimeout.current = setTimeout(checkAvailability, 300);
 
-    // Cleanup the timeout if the component unmounts or the dependencies change
     return () => clearTimeout(debounceTimeout.current);
   }, [inputs.username, isSignUp]);
 
@@ -201,25 +198,22 @@ const SignInSignUp = () => {
     }
 
     try {
-      // setLoading(true);
       const data = await sendAuthRequest(isSignUp, inputs);
 
       if (isSignUp) {
         console.log("Sign-up successful:", data);
-        // setSuccess("Signed Up Successfully. Logging you in...");
 
         const { userId, isAdmin, token } = data || {};
 
-        // Automatically log the user in after sign-up
         if (userId && token) {
           localStorage.setItem("token", token);
           localStorage.setItem("isAdmin", isAdmin);
-          localStorage.setItem("isLoggedIn", "true"); // Since user just signed up, they're logged in.
+          localStorage.setItem("isLoggedIn", "true");
 
           console.log(token, isAdmin);
           dispatch(authActions.login({ isAdmin, token }));
           setSuccessFinal("Sign Up Successfull. Logging you in...");
-          // Redirect after a short delay to show the success message
+
           setTimeout(() => {
             navigate("/");
           }, 1000);
@@ -254,7 +248,6 @@ const SignInSignUp = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Check if the input is for email and convert to lowercase
     const updatedValue = name === "email" ? value.toLowerCase() : value;
 
     setInputs((prevState) => ({

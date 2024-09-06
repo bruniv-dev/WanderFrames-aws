@@ -51,20 +51,6 @@ const allowedOrigins = [
   "https://wanderframes.onrender.com",
 ];
 
-// Middleware setup
-// app.use(
-//   cors({
-//     origin: function (origin, callback) {
-//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error("Not allowed by CORS"));
-//       }
-//     },
-//     credentials: true, // Allow credentials
-//   })
-// );
-
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -74,17 +60,17 @@ app.use(
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true, // Allow credentials (cookies, authorization headers, TLS client certificates)
+    credentials: true,
   })
 );
 
 app.use(cookieParser());
 
-app.use(express.json()); // to process JSON data sent from requests
+app.use(express.json());
 
 // Routes
-app.use("/user", userRouter); // User-based routes
-app.use("/post", postRouter); // Post-based routes
+app.use("/user", userRouter);
+app.use("/post", postRouter);
 
 const bucketName = process.env.AWS_BUCKET_NAME;
 const region = process.env.AWS_BUCKET_REGION;
@@ -117,27 +103,24 @@ export async function uploadFile(fileBuffer, fileName, mimetype) {
   };
 
   const data = await s3Client.send(new PutObjectCommand(uploadParams));
-  console.log("Upload data:", data); // Check what is returned
+  console.log("Upload data:", data);
   return {
-    Key: fileName, // Return the Key used for the upload
+    Key: fileName,
   };
 }
 
-export async function getObjectSignedUrl(key) {
-  const params = {
-    Bucket: bucketName,
-    Key: key,
-  };
+// export async function getObjectSignedUrl(key) {
+//   const params = {
+//     Bucket: bucketName,
+//     Key: key,
+//   };
 
-  // https://aws.amazon.com/blogs/developer/generate-presigned-url-modular-aws-sdk-javascript/
-  const command = new GetObjectCommand(params);
-  const seconds = 3600;
-  const url = await getSignedUrl(s3Client, command, { expiresIn: seconds });
+//   const command = new GetObjectCommand(params);
+//   const seconds = 3600;
+//   const url = await getSignedUrl(s3Client, command, { expiresIn: seconds });
 
-  return url;
-}
-
-// mongoose setup
+//   return url;
+// }
 
 const mongoUri = `mongodb+srv://brunivdev:${process.env.MONGODB_PASSWORD}@cluster0.4xivc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -148,7 +131,6 @@ mongoose
     console.error("MongoDB connection error:", err);
   });
 
-// Start server
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

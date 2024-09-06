@@ -1,5 +1,5 @@
 import React from "react";
-import "./Loading.css"; // Create appropriate CSS for styling
+import "./Loading.css";
 
 const Loading = () => (
   <div className="loading-overlay">
